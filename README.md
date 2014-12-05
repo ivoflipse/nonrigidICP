@@ -7,7 +7,7 @@ added comments (though not always useful ones), renamed most variables to someth
 a bit more readable. The code still seems to work, albeit slowly, though that seems attributable to the very low error threshold
 in rigidICP.
 
-Description:
+Description
 ---
 
 The function aligns, and non-rigidly deforms a source/template mesh to a second target mesh. Isotropic meshes are preferred. 
