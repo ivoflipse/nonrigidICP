@@ -1,0 +1,22 @@
+function [vertices, faces] = load_new_files(faces_file_path, verts_file_path)
+
+faces_raw = textread(faces_file_path, '%d');
+[w,h] = size(faces_raw);
+% Indexing at zero gives us problems and I was reshaping the wrong way around
+source_126316_combined_raw_faces = reshape(faces_raw, 3, w/3)' + 1;
+vertices_raw = textread('C:\Dropbox\Public\Manu\126316_combined_raw_vertices.txt', '%f');
+[w, h] = size(vertices_raw);
+source_126316_combined_raw_vertices = reshape(vertices_raw, 3, w/3)';
+
+
+
+% Visualize the stuff
+% h = trisurf(source_faces, source_vertices(:, 1), source_vertices(:, 2), source_vertices(:, 3), 0.3, 'Edgecolor', 'none');
+% hold
+% light
+% lighting phong;
+% set(gca,  'visible',  'off')
+% set(gcf, 'Color', [1 1 0.88])
+% view(90, 90)
+% set(gca, 'DataAspectRatio', [1 1 1], 'PlotBoxAspectRatio', [1 1 1]);
+% alpha(0.6);
