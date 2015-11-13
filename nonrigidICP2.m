@@ -130,6 +130,8 @@ for i  = 1:iterations
     pause (0.1)
 end
 
+
+
 % local deformation
 source_vertices_size = size(source_vertices, 1);
 % This stores the results of procrustes
@@ -146,7 +148,7 @@ control = 1;
 % caclulate the average + std as the cutoff value
 [cutoff] = definecutoff(source_vertices,  source_faces);
 
-while control>0
+while control > 0
     % I have no idea what this code is really doing
     [target_vertices, target_faces, control] = remesh( target_vertices,  target_faces, cutoff);
 end
@@ -154,6 +156,10 @@ end
 delete(tttt)
 % Visualize the result
 tttt = trisurf(target_faces, target_vertices(:, 1), target_vertices(:, 2), target_vertices(:, 3), 'Facecolor', 'm', 'Edgecolor', 'none');
+
+% % Quit early
+% registered = source_vertices;
+% return;
 
 fprintf('Step two\n');
 %define local mesh relation
@@ -201,3 +207,4 @@ end
 
 % Set the return value
 registered = source_vertices;
+return;
